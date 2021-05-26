@@ -1,0 +1,108 @@
+\section{Анализ электронных писем корпорации Enron}
+
+\subsection{Длины писем}
+
+Гистограмма распределения длин (в количестве слов) писем:
+
+$ $
+
+\includegraphics[scale=0.75]{pics/enron_emails_words_count.jpg}
+
+Гистограмма, как и в случае писем Клинтон, соответствует интуитивным ожиданиям -- более длинные письма пишутся реже. 
+
+\subsection{Время отправки писем}
+
+\begin{itemize}
+
+\item Количество отправленных писем по годам:
+
+$ $
+
+\includegraphics[scale=0.8]{pics/enron_year.png}
+
+График соответствует наибольшей активности компании в 2000-2001 годах и банкротству к концу 2001 года.
+
+\item Количество отправленных писем по дням недели:
+
+$ $
+
+\includegraphics[scale=0.8]{pics/enron_week.png}
+
+Этот график также выглядит естественно --- наибольшее число писем во вторник и среду, в середине рабочей недели, наименьшее --- в выходные дни.
+
+\item Количество отправленных писем по времени суток:
+
+$ $
+
+\includegraphics[scale=0.8]{pics/enron_hour.png}
+
+На графике вышем видим наибольшую продуктивность во вторую половину дня, низкую активность в ночные часы, а также аномалию в самом разгаре дня, объсняющуюся обеденным перерывом.
+
+\end{itemize}
+
+\subsection{Частотность слов}
+
+Для интерпретации самых часто используемых слов использовались так называемые облака слов.
+
+Облако слов -- это метод визуализации данных, используемый для представления текстовых данных, в которых размер каждого слова указывает его частоту или важность. Важные точки текстовых данных могут быть выделены с помощью облака слов. Облака слов широко используются для анализа данных с веб-сайтов социальных сетей.
+
+
+\begin{itemize}
+\item Облако слов, построенное по словам из тем электронных писем:
+
+\begin{center}
+\includegraphics[scale=0.5]{pics/enron_wordcloud_subject.png}
+\end{center}
+
+Слова, встречающиеся в темах писем: \texttt{meeting}, \texttt{conference room}, \texttt{update}, \texttt{approval},\texttt{access request}, \texttt{enron}.
+
+\item Облако слов, построенное по словам из содержания электронных писем:
+
+\begin{center}
+\includegraphics[scale=0.5]{pics/enron_wordcloud_content.png}
+\end{center}
+
+Слова, встречающиеся в содержании писем: \texttt{enron}, \texttt{week}, \texttt{thank}, \texttt{know}, \texttt{new}.
+
+\end{itemize}
+
+\subsection{Отправители и получатели писем}
+
+\begin{itemize}
+\item 20 адресов, с которых было отправлено наибольшее количество электронных писем:
+
+\begin{center}
+\includegraphics[scale=0.5]{pics/enron_most_sent.png}
+\end{center}
+
+\item 20 адресов, на которые было отправлено наибольшее количество электронных писем:
+
+\begin{center}
+\includegraphics[scale=0.5]{pics/enron_most_recieved.png}
+\end{center}
+
+Как видим, в графиках распределения получателей и отправителей писем много различий --- некоторые люди пишут писем меньше, чем получают и наоборот.
+
+\item Теперь посмотрим количество писем между фиксированной парой собеседников. Рассмотрим только электронные письма, отправленные на один адрес электронной почты, так как они могут быть более важными личными сообщениями.
+
+\begin{center}
+\begin{tabular}{ | l | l | l | }
+\hline
+Отправитель & Получатель & Количество \\ \hline
+pete.davis & pete.davis & 9141 \\ \hline
+vince.kaminski & vkaminski@aol.com & 4308 \\ \hline
+enron.announcements & all.worldwide & 2206 \\ \hline
+enron.announcements & all.houston & 1701 \\ \hline
+kay.mann & suzanne.adams & 1528 \\ \hline
+vince.kaminski & shirley.crenshaw & 1190 \\ \hline
+steven.kean & maureen.mcvicker & 1014 \\ \hline
+kay.mann & nmann@erac.com	 & 980 \\ \hline
+kate.symes & evelyn.metoyer & 	915 \\ \hline
+kate.symes & kerri.thompson	 & 859 \\ \hline
+\end{tabular}
+\end{center}
+
+Здесь интересно, что некоторые люди отправляют сами себе много электронных писем.
+
+
+\end{itemize}

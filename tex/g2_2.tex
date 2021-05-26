@@ -1,0 +1,80 @@
+\section{Предобработка электронных писем корпорации Enron}
+
+\subsection{Выделение метаданных из сырого текста писем}
+
+Набор данных \textit{Enron} также требует предварительной обработки. К примеру, так выглядит необработная информация одного электронного письма:
+
+\begin{verbatim}
+Message-ID: <18782981.1075855378110.JavaMail.evans@thyme>
+Date: Mon, 14 May 2001 16:39:00 -0700 (PDT)
+From: phillip.allen@enron.com
+To: tim.belden@enron.com
+Subject: 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Phillip K Allen
+X-To: Tim Belden <Tim Belden/Enron@EnronXGate>
+X-cc: 
+X-bcc: 
+X-Folder: \\Phillip_Allen_Jan2002_1\\Allen, Phillip K.\\\'Sent Mail
+X-Origin: Allen-P
+X-FileName: pallen (Non-Privileged).pst
+
+Here is our forecast
+\end{verbatim}
+
+Конечно, анализировать данные (в том числе метаинформацию о письме) в таком формате бессмысленно. Для обработки мы будем использовать библиотеку \textit{email} \cite{bib8}. Данная библиотека позволяет из сырых данных выделить вспомогательную информацию о письме, в частности, библиотека позволяет выделить следующие интересные нам атрибуты:
+\begin{itemize}
+\item полное содержание письма,
+\item дата отправки,
+\item адрес получателя,
+\item адрес отправителя,
+\item тема письма,
+\item логин отправителя.
+\end{itemize}
+
+\subsection{Выделение содержания писем}
+
+После этого требуется также привести содержание письма в приемлимый для дальнейшего обучения вид. Например, для письма с содержанием ниже мы хотим выделить только единицы, имеющие отношение к сути письма.
+
+\begin{verbatim}
+
+Forwarded by Phillip K Allen/HOU/ECT on 09/12/2000 11:22 AM 
+
+Michael Etringer
+
+09/11/2000 02:32 PM
+
+To: Phillip K Allen/HOU/ECT@ECT
+cc:  
+Subject: Contact list for mid market
+
+Phillip,
+Attached is the list. Have your people fill in the columns 
+highlighted in yellow. As best can we will try not to overlap
+on accounts. 
+Thanks, Mike
+\end{verbatim}
+
+Выделение этих единиц происходит в соответствии со следующей последовательности шагов:
+\begin{enumerate}
+\item Перевод всех символов в нижний регистр.
+\item Удаление всех слов, содержащих цифры. Такие слова не несут смысловой нагрузки и, соответственно, влияют на качество обучения в худшую сторону (подавляющее большинство таких слов было получено отправителями по ошибке).
+\item Удаление единиц, соответствующих информации о пересланных письмах.
+\item Удаление единиц, соответствующих информации о вложениях в письме.
+\item Удаление единиц, соответствующих почтовым адресам, присутствующим в тексте писем.
+\item Удаление единиц, соответствующих корпоративным именам пользователей.
+\item Удаление единиц, соответствующих ссылкам в сети Интернет.
+\item Удаление единиц, не несущих смысловой составляющей, в заголовке письма.
+\end{enumerate}
+
+Шаги 3-7 выполняются с использованием регулярных выражений. 
+
+В результате, для примера выше, дальнейшая работа будет производиться со следующим текстом:
+\begin{verbatim}
+contact list for mid market. phillip, attached is the list. 
+have your people fill in the columns highlighted in yellow. 
+as best can we will try not to overlap on accounts. thanks, mike'
+\end{verbatim}
+
