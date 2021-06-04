@@ -1,39 +1,29 @@
-\section{Анализ электронных писем Хиллари Клинтон}
+\section{Переназвать}
 
-\subsection{Количества слов}
+Для тематического моделирования в качестве модели в данной работе используется латентное размещение Дирихле (англ. \textit{latent Dirichlet allocation, LDA}) \cite{bib4}.
 
-\begin{itemize}
+Для оценки качества данной модели используется перплексия (англ. \textit{perplexity}) --- оценка того, насколько хорошо вероятностная модель предсказывает выборку. Низкая перплексия указывает на то, что распределение вероятностей хорошо предсказывает выборку. 
 
-\item Гистограмма распределения количества слов каждой длины: 
+В зависимости от параметра модели, отвечающего за количество тем у распределения текстов, получилась следующая зависимость значения перплексии от количества тем:
 
-\includegraphics[scale=0.5]{pics/word_lengths.png}
+\includegraphics[scale=0.5]{pics/perplexity.png}
 
-Гистограмма выглядит вполне естественным образом, много коротких слов (например, местоимений, предлогов).
+Ниже приведены примеры слов, принадлежащие каждой из 6 (с оптимальным значением перплексии) тем:
 
-\item Гистограмма распределения длин (в количестве слов) писем:
+\begin{tabular}{ | l | l | l | }
+\hline
+Номер темы & Слова \\ \hline
+1 & obama, state, president, government, american, \\ & israel,  policy, country \\ \hline
+2 & woman, say, work, health, year, senate, group, \\ & government,  support, company \\ \hline
+3 & call, get, work, see, want, know, good, also, think, tomorrow \\ \hline
+4 & secretary, office, state, meet, room, department,  \\ &  arrive, route, depart, private \\ \hline 
+5 & state, information, benghazi, department, doc, case, subject, \\ & iran, agreement, house \\ \hline
+6 & cheryl, gov, fyi, sullivan, state, friday, sunday, branch,  \\ & wednesday, april, january \\ \hline 
 
-\includegraphics[scale=0.5]{pics/email_lengths.png}
+\end{tabular}
 
-Гистограмма соответствует интуитивным ожиданиям -- более длинные письма пишутся реже. 
-\end{itemize}
+\newpage
 
-\subsection{Время отправки писем}
+Распределение слов по темам:
 
-\begin{itemize}
-
-\item Количество отправленных писем по годам:
-
-$ $
-
-\includegraphics[scale=0.8]{pics/year.png}
-
-На графике можно заметить странную аномалию с нулем писем в 2011 году. Вероятнее всего, это связано с особенностями набора данных. 
-
-\item Количество отправленных писем по дням недели:
-
-$ $
-
-\includegraphics[scale=0.8]{pics/week.png}
-
-График выглядит слегка неестественно (в отличие от \textit{Enron}). Можно попытаться интерпретировать это как особенности одного отдельного человека, занимающего специфичным видом деятельности.
-\end{itemize}
+\includegraphics[scale=0.5]{pics/words_map.png}

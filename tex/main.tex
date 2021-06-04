@@ -4,20 +4,16 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{style/bsumain}
-\usepackage{style/bsucoursetitle}
+%\usepackage{style/bsudiplomastyle}
 \usepackage{blindtext}
 \usepackage{hyperref}
-
+\usepackage{layout}
+%\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=1cm]{geometry}
 
 \begin{document}
+  %\layout
+  %\input{title}
   
-%  \input{title}
-  
-  
-
-%  \maketitle
-
-
   \setcounter{page}{2}
 
   {
@@ -31,94 +27,16 @@
  
   \input{g1}
 
-  \input{g6}
-
   \input{g2}
-  
-  \input{g5}
   
   \input{g3}
   
   \input{g4}
-
-\begin{thebibliography}{3}
-
-\bibitem{bib234234}
-BERTopic. \url{https://maartengr.github.io/BERTopic/}.
-
-\bibitem{bib_1}
-Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. 
-\url{https://arxiv.org/abs/1810.04805}.
-
-\bibitem{bib_2}
-Lena Voita. 
-(Introduction to) Transfer Learning. \url{https://lena-voita.github.io/nlp_course/transfer_learning.html}.
-
-\bibitem{bib_3}
-Brendan Bailey. Lightning Talk: Clustering with HDBScan. \url{https://towardsdatascience.com/lightning-talk-clustering-with-hdbscan-d47b83d1b03a}.
-
-\bibitem{bib1}
-Hillary Clinton's Emails,
-\url{https://www.kaggle.com/kaggle/hillary-clinton-emails}.
-
-\bibitem{bib2}
-Обухов А. Д. Постановка задачи структурно-параметрического синтеза системы
-электронного документооборота научно-образовательного учреждения // Вестник ТГТУ. –
-2016. – № 2. – С. 217–232. – DOI: 10.17277/
-vestnik.2016.02.pp.217-232.
-
-\bibitem{bib3}
-Библиотека spaCy. \url{https://spacy.io/}.
-
-\bibitem{bib4}
-David M. Blei, Andrew Ng, Michael Jordan. Latent Dirichlet allocation // Journal of Machine Learning Research (3) 2003 pp. 993-1022.
-
-\bibitem{bib5}
-Mikolov T., Chen K., Corrado G., Dean J. Efficient Estimation of Word Representations in Vector Space // In Proceedings of Workshop at ICLR. — 2013a.
-
-\bibitem{bib6}
-GloVe: Global Vectors for Word Representation. \url{https://nlp.stanford.edu/projects/glove/}.
-
-\bibitem{bib7}
-van der Maaten L.J.P., Hinton G.E. Visualizing Data Using t-SNE // Journal of Machine Learning Research. — 2008. — Ноябрь (т. 9).
-
-\bibitem{bib8}
-Email — An email and MIME handling package. \url{https://docs.python.org/3/library/email.html}.
-
-\end{thebibliography}
-
-
-\addcontentsline{toc}{chapter}{Литература}
-
-
-  % \section{Первый нумерованный раздел}
-  % \label{s:first_num_sec}
-
   
+  \input{g5}
 
-  % \blindmathpaper
-  % \subsection{Первый нумерованный подраздел}
-  % \label{ss:first_num_subsec}
-  % \blindmathpaper
-
-  % \chapter{Вторая нумерованная глава}
-  % \label{c:second_num_chap}
-  % \blindmathpaper
-  % \section{Второй нумерованный раздел}
-  % \label{s:second_num_sec}
-  % \blindmathpaper
-  % \subsection{Второй нумерованный подраздел}
-  % \label{ss:second_num_subsec}
-  % \blindmathpaper
-
-  % \appendix
-  % \section{Один}
-  % \blindmathpaper
-  % \section{Два}
-  % \blindmathpaper
-  % \section{Три}
-  % \blindmathpaper
-
-  % \lstinputlisting[language=R, caption=Исходный кот, label=lst:code]{code.R}
+  \input{g6}
+  
+  \input{library}
 
 \end{document}
