@@ -1,5 +1,5 @@
-# clinton-emails-research
+# ДИПЛОМНАЯ РАБОТА. ИССЛЕДОВАНИЕ МЕТОДОВ ВЫДЕЛЕНИЯ СМЫСЛОВЫХ ЕДИНИЦ ИЗ ДЕЛОВЫХ ПЕРЕПИСОК
 
-[Jupyter Notebook](notebook.ipynb)
+[Jupyter Notebook (clinton)](clinton.html), [Jupyter Notebook (enron)](enron.html)
 
-[PDF](tex/main.pdf)
+[Diploma text in PDF](tex/main.pdf)
