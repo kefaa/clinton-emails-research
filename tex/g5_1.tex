@@ -1,29 +1,5 @@
-\section{Переназвать}
+\section{Исследование электронных писем Хиллари Клинтон}
 
-Для тематического моделирования в качестве модели в данной работе используется латентное размещение Дирихле.
+\input{g5_1_1}
 
-Для оценки качества данной модели используется перплексия (англ. \textit{perplexity}) --- оценка того, насколько хорошо вероятностная модель предсказывает выборку. Низкая перплексия указывает на то, что распределение вероятностей хорошо предсказывает выборку. 
-
-В зависимости от параметра модели, отвечающего за количество тем у распределения текстов, получилась следующая зависимость значения перплексии от количества тем:
-
-\includegraphics[scale=0.5]{pics/perplexity.png}
-
-Ниже приведены примеры слов, принадлежащие каждой из 6 (с оптимальным значением перплексии) тем:
-
-\begin{tabular}{ | l | l | l | }
-\hline
-Номер темы & Слова \\ \hline
-1 & obama, state, president, government, american, \\ & israel,  policy, country \\ \hline
-2 & woman, say, work, health, year, senate, group, \\ & government,  support, company \\ \hline
-3 & call, get, work, see, want, know, good, also, think, tomorrow \\ \hline
-4 & secretary, office, state, meet, room, department,  \\ &  arrive, route, depart, private \\ \hline 
-5 & state, information, benghazi, department, doc, case, subject, \\ & iran, agreement, house \\ \hline
-6 & cheryl, gov, fyi, sullivan, state, friday, sunday, branch,  \\ & wednesday, april, january \\ \hline 
-
-\end{tabular}
-
-\newpage
-
-Распределение слов по темам:
-
-\includegraphics[scale=0.5]{pics/words_map.png}
+\input{g5_1_2}
